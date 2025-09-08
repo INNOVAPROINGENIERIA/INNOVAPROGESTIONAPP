@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo de Cotizaciones</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/sidebar.css">
+  <link rel="stylesheet" href="assets/css/cotizaciones.css">
+  <link rel="stylesheet" href="assets/css/modal.css">
+</head>
+<body>
+
+  <!-- Sidebar dinámico -->
+  <div id="sidebar-container"></div>
+
+  <!-- Barra superior -->
+  <div class="top-right-bar">
+    <div class="top-icon"><i class="fas fa-bell"></i></div>
+    <div class="top-icon"><i class="fas fa-user-circle"></i></div>
+  </div>
+
+  <!-- Contenido principal -->
+  <main class="main-content content">
+    <div class="stats">
+      <div class="card"><h3>Aprobadas</h3><p>0</p></div>
+      <div class="card"><h3>Rechazadas</h3><p>0</p></div>
+      <div class="card"><h3>En espera</h3><p>0</p></div>
+    </div>
+
+    <header>
+      <h1>Cotizaciones</h1>
+      <button id="btnNuevaCotizacion" class="btn-primary">+ Nueva Cotización</button>
+    </header>
+
+    <section>
+      <table class="tabla-cotizaciones">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Fecha</th>
+            <th>Cliente</th>
+            <th>Proyecto</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001</td>
+            <td>26/08/2025</td>
+            <td>Cristian Casabianca</td>
+            <td>Remodelación</td>
+            <td>Pendiente</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Modal Cotización -->
+  <div id="modalCotizacion" class="modal">
+    <div class="modal-content wide">
+      <span class="close">&times;</span>
+      <h2>Nueva Cotización</h2>
+
+      <div class="form-grid">
+        <div>
+          <label>Cliente:</label>
+          <input type="text" placeholder="Nombre o razón social">
+          <label>Proyecto:</label>
+          <input type="text" placeholder="Proyecto o referencia">
+          <label>Fecha:</label>
+          <input type="date">
+          <label>Contacto:</label>
+          <input type="text" placeholder="Teléfono">
+          <label>Correo:</label>
+          <input type="text" placeholder="Correo">
+        </div>
+
+        <div class="totales-box">
+          <h3>Resumen</h3>
+          <label>Subtotal:</label>
+          <input type="text" id="subtotalGeneral" value="0" disabled>
+          <label>IVA (19%):</label>
+          <input type="text" id="ivaGeneral" value="0" disabled>
+          <label>Total:</label>
+          <input type="text" id="totalGeneral" value="0" disabled>
+        </div>
+      </div>
+
+      <h3>Ítems de la Cotización</h3>
+      <table class="tabla-items" id="tablaItems">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Descripción</th>
+            <th>Unidad</th>
+            <th>Cantidad</th>
+            <th>Valor Unitario</th>
+            <th>Descuento</th>
+            <th>AIU</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="modal-actions">
+        <button id="addItemBtn">+ Agregar Ítem Principal</button>
+        <button id="addSubitemBtn">+ Agregar Subítem</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Menú contextual -->
+  <div id="contextMenu" class="context-menu">
+    <ul>
+      <li id="ctxAddSubitem">➕ Agregar subítem aquí</li>
+      <li id="ctxEdit">✏️ Editar</li>
+      <li id="ctxDuplicate">📄 Duplicar</li>
+      <li id="ctxDelete">🗑️ Eliminar</li>
+    </ul>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/loadSidebar.js"></script>
+  <script src="assets/js/modal.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+/* --- Estilos generales --- */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  background: #f4f6f9;
+}
+
+/* --- Contenido principal --- */
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Botones */
+.btn-primary {
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.btn-secondary {
+  background: #eeeeee;
+  border: none;
+  padding: 8px 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* ====== INDICADORES ====== */
+.stats {
+  display: flex;
+  justify-content: center; /* centrado */
+  gap: 20px;               /* espacio entre tarjetas */
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  flex: 0 1 auto;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  min-width: 120px;
+  max-width: 250px;
+  height: 30px;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #555;
+}
+
+.card p {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0 0;
+}
+
+/* --- Tablas --- */
+.tabla-cotizaciones, .tabla-items {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+.tabla-cotizaciones th, .tabla-items th {
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  color: white;
+  padding: 8px;
+}
+.tabla-cotizaciones td, .tabla-items td {
+  border: 1px solid #ddd;
+  padding: 6px;
+  text-align: center;
+}

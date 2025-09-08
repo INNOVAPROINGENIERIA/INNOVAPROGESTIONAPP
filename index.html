@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de proyectos INNOVAPRO</title>
+  <link rel="stylesheet" href="../html/sidebar.html">
+  <link rel="stylesheet" href="assets/css/sidebar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div id="sidebar-container"></div>
+
+  <div class="top-right-bar">
+    <div class="top-icon" data-tooltip="Iniciar sesión">
+      <i class="fa-solid fa-user-circle"></i>
+    </div>
+    <div class="top-icon" data-tooltip="Notificaciones">
+      <i class="fa-solid fa-bell"></i>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>Bienvenido a INNOVAPRO</h1>
+    <button id="btnNuevaCotizacion" class="btn-primary">Nueva Cotización</button>
+
+    <div id="modalCotizacion" class="modal">
+      <div class="modal-content wide">
+        <span class="close">&times;</span>
+        <h2>Nueva Cotización</h2>
+        <table id="tablaCotizacion" class="tabla-items">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Descripción</th>
+              <th>Cantidad</th>
+              <th>Valor unitario</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div class="modal-footer">
+          <p><strong>Total: </strong><span id="totalGeneral">$0.00</span></p>
+          <div class="modal-actions">
+            <button id="cancelarModal">Cancelar</button>
+            <button>Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/loadSidebar.js"></script>
+
+</body>
+</html>

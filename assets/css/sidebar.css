@@ -1,0 +1,139 @@
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+
+    /* Barra lateral */
+    .sidebar {
+      width: 90px; /* ancho fijo para icono + texto */
+      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px 0;
+      position: fixed;
+      height: 100vh;
+    }
+
+    /* Cada botón */
+    .menu-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 12px 0;
+      cursor: pointer;
+      position: relative;
+    }
+
+    /* Ícono */
+    .menu-item i {
+      font-size: 22px;
+      margin-bottom: 5px;
+      color: white;
+    }
+
+    /* Texto fijo debajo */
+    .menu-item span {
+      font-size: 12px;
+      margin-top: 2px;
+      color:white;
+    }
+
+    /* Tooltip flotante */
+    .menu-item::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-left: 10px;
+      background: rgba(0,0,0,0.75);
+      color: white;
+      padding: 5px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+
+    .menu-item:hover::after {
+      opacity: 1;
+    }
+    /* Cambio de color al pasar el mouse */
+.menu-item:hover i {
+  color: #57A09B; /* color al hacer hover */
+}
+
+.menu-item:hover span {
+  color: #57A09B; /* opcional: cambia el color del texto al hacer hover */
+}
+
+    /* Contenido principal */
+    .content {
+      margin-left: 90px;
+      padding: 20px;
+      flex-grow: 1;
+    }
+  
+/* Logo dentro de la barra lateral */
+.sidebar-logo {
+  margin-bottom: 30px;  /* espacio entre logo y menú */
+  width: 60px;           /* ancho máximo del logo */
+}
+
+.sidebar-logo .logo {
+  width: 100%;           /* se adapta al contenedor */
+  display: block;
+}
+/*inicion de sesion y notificaciones*/
+.top-right-bar {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  gap: 15px; /* espacio entre íconos */
+  align-items: center;
+  z-index: 1000; /* para que esté encima de otros elementos */
+}
+
+.top-icon i {
+  font-size: 22px;
+  color: #57A09B;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.top-icon:hover i {
+  color: #57A09B; /* color al pasar el mouse */
+}
+
+
+.search-bar {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;     /* centra verticalmente */
+  margin: 20px auto;       /* espacio alrededor */
+}
+
+.search-bar input {
+  width: 800px;            /* ancho del campo */
+  padding: 8px 12px;
+  border-radius: 20px 0 0 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-bar button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: 0 20px 20px 0;
+  background-color: #2c5364;
+  color: white;
+  cursor: pointer;
+}
