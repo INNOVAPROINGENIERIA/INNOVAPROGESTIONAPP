@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="./assets/css/sidebar.css">
+  <link rel="stylesheet" href="assets/css/sidebar.css">
   <link rel="stylesheet" href="assets/css/formularioclientes.css">
 </head>
 <body>
@@ -19,13 +19,9 @@
     <div class="sidebar-logo">
       <img src="../assets/img/logo.jpg" alt="Logo Innovapro" class="logo">
     </div>
-    <a href="index.html" class="menu-item" data-tooltip="Inicio">
-      <i class="fa-solid fa-house"></i><span>Inicio</span>
+    <a href="moduloclientes.html" class="menu-item" data-tooltip="Volver a Clientes">
+      <i class="fa-solid fa-arrow-left"></i><span>Volver</span>
     </a>
-    <a href="moduloclientes.html" class="menu-item active" data-tooltip="Clientes">
-      <i class="fa-solid fa-users"></i><span>Clientes</span>
-    </a>
-    <!-- … resto de iconos … -->
   </div>
 
   <!-- Contenido -->
@@ -35,10 +31,17 @@
       <button class="btn-primary"><i class="fa-solid fa-save"></i> Guardar Cambios</button>
     </header>
 
-    <form class="form-detallado">
-      <!-- Sección Empresa -->
-      <section>
-        <h3><i class="fa-solid fa-building"></i> Información de la Empresa</h3>
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="empresa"><i class="fa-solid fa-building"></i> Empresa</button>
+      <button class="tab-btn" data-tab="contacto"><i class="fa-solid fa-address-book"></i> Contacto</button>
+      <button class="tab-btn" data-tab="proyectos"><i class="fa-solid fa-diagram-project"></i> Proyectos</button>
+      <button class="tab-btn" data-tab="observaciones"><i class="fa-solid fa-note-sticky"></i> Observaciones</button>
+    </div>
+
+    <!-- Contenido de Tabs -->
+    <div class="tab-content active" id="empresa">
+      <form>
         <div class="form-grid">
           <div>
             <label for="empresa">Nombre de la Empresa</label>
@@ -61,19 +64,19 @@
             <input type="text" id="direccion" placeholder="Calle 123 #45-67, Bogotá">
           </div>
         </div>
-      </section>
+      </form>
+    </div>
 
-      <!-- Sección Responsable -->
-      <section>
-        <h3><i class="fa-solid fa-user-gear"></i> Responsable del Proyecto</h3>
+    <div class="tab-content" id="contacto">
+      <form>
         <div class="form-grid">
           <div>
-            <label for="responsable">Ingeniero Residente</label>
+            <label for="responsable">Nombre del Contacto</label>
             <input type="text" id="responsable" placeholder="Ing. Juan Pérez">
           </div>
           <div>
             <label for="cargo">Cargo</label>
-            <input type="text" id="cargo" placeholder="Residente de Obra">
+            <input type="text" id="cargo" placeholder="Gerente de Compras">
           </div>
           <div>
             <label for="email-responsable">Correo</label>
@@ -84,14 +87,49 @@
             <input type="tel" id="telefono-responsable" placeholder="+57 310 000 0000">
           </div>
         </div>
-      </section>
+      </form>
+    </div>
 
-      <!-- Sección Observaciones -->
-      <section>
-        <h3><i class="fa-solid fa-note-sticky"></i> Observaciones</h3>
-        <textarea rows="4" placeholder="Notas adicionales sobre el cliente..."></textarea>
-      </section>
-    </form>
+    <div class="tab-content" id="proyectos">
+      <table class="projects-table">
+        <thead>
+          <tr>
+            <th>ID Proyecto</th>
+            <th>Nombre</th>
+            <th>Fecha Inicio</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PRJ-001</td>
+            <td>Edificio Central</td>
+            <td>2025-08-01</td>
+            <td><span class="badge success">Activo</span></td>
+            <td>
+              <button class="btn-view"><i class="fa-solid fa-eye"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td>PRJ-002</td>
+            <td>Urbanización Norte</td>
+            <td>2025-09-01</td>
+            <td><span class="badge pending">Pendiente</span></td>
+            <td>
+              <button class="btn-view"><i class="fa-solid fa-eye"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-content" id="observaciones">
+      <textarea rows="6" placeholder="Notas adicionales sobre el cliente..."></textarea>
+    </div>
   </div>
+
+  <!-- Script Tabs -->
+  <script src="assets/js/formularioclientes.js"></script>
 </body>
 </html>
