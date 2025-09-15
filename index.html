@@ -3,55 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestión de proyectos INNOVAPRO</title>
-  <link rel="stylesheet" href="../html/sidebar.html">
-  <link rel="stylesheet" href="assets/css/sidebar.css">
+  <title>Accesos directos - Innovapro</title>
+
+  <!-- Fuente Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="./assets/css/index.css">
 </head>
 <body>
-  <div id="sidebar-container"></div>
 
-  <div class="top-right-bar">
-    <div class="top-icon" data-tooltip="Iniciar sesión">
-      <i class="fa-solid fa-user-circle"></i>
-    </div>
-    <div class="top-icon" data-tooltip="Notificaciones">
-      <i class="fa-solid fa-bell"></i>
-    </div>
-  </div>
-
+  <!-- Aquí se incluirá el sidebar -->
+  <div id="sidebar"></div>
+<!-- Contenido -->
   <div class="content">
-    <h1>Bienvenido a INNOVAPRO</h1>
-    <button id="btnNuevaCotizacion" class="btn-primary">Nueva Cotización</button>
+    <!-- Tabs -->
+    <div class="tabs">
+      <div class="tab active">Accesos directos</div>
+      <div class="tab">Indicadores</div>
+      <div class="tab">Habilitaciones</div>
+    </div>
 
-    <div id="modalCotizacion" class="modal">
-      <div class="modal-content wide">
-        <span class="close">&times;</span>
-        <h2>Nueva Cotización</h2>
-        <table id="tablaCotizacion" class="tabla-items">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Descripción</th>
-              <th>Cantidad</th>
-              <th>Valor unitario</th>
-              <th>Subtotal</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-        <div class="modal-footer">
-          <p><strong>Total: </strong><span id="totalGeneral">$0.00</span></p>
-          <div class="modal-actions">
-            <button id="cancelarModal">Cancelar</button>
-            <button>Guardar</button>
-          </div>
-        </div>
+    <!-- Accesos directos -->
+    <div class="shortcuts">
+      <div class="shortcut">
+        <i class="fa-solid fa-file-invoice"></i>
+        <p>Crear Nuevo Cliente</p>
+      </div>
+      <div class="shortcut">
+        <i class="fa-solid fa-box"></i>
+        <p>Crear Cotizacion Rapida</p>
+      </div>
+      <div class="shortcut">
+        <i class="fa-solid fa-users"></i>
+        <p>Crear Cotizacion APU</p>
+      </div>
+      <div class="shortcut">
+        <i class="fa-solid fa-user-tie"></i>
+        <p>Crea Nuevo Proveedor</p>
+      </div>
+      <div class="shortcut">
+        <i class="fa-solid fa-chart-line"></i>
+        <p>Crear Nuevo proyecto
+      </div>
+      <div class="shortcut">
+        <i class="fa-solid fa-database"></i>
+        <p>Inventario</p>
+      </div>
+      <div class="shortcut">
+        <i class="fa-solid fa-database"></i>
+        <p>Crear flujo de trabajo</p>
+      </div>
+      <div class="shortcut">
+        <i class="fa-solid fa-database"></i>
+        <p>Crear cronograma de actividades</p>
+      </div>
+      <div class="shortcut">
+        <i class="fa-solid fa-database"></i>
+        <p>Crear reportes</p>
       </div>
     </div>
   </div>
 
-  <script src="assets/js/loadSidebar.js"></script>
+  
+  <!-- Script para cargar el sidebar -->
+  <script>
+    fetch("sidebar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("sidebar").innerHTML = data;
+      });
+  </script>
 
 </body>
 </html>

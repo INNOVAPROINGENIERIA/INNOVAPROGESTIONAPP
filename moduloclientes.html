@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo de Clientes - Innovapro</title>
+
+  <!-- Fuente Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS propio -->
+  <link rel="stylesheet" href="assets/css/moduloclientes.css">
+</head>
+<body>
+  <!-- Aquí se incluirá el sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Contenido principal -->
+  <div class="content">
+    <!-- Header -->
+    <div class="page-header">
+      <h2>Gestión de Clientes</h2>
+      <button id="btnNuevoCliente" class="btn-primary">
+        <i class="fa-solid fa-user-plus"></i> Nuevo Cliente
+      </button>
+    </div>
+
+    <!-- Modal Nuevo Cliente -->
+    <div id="modalNuevoCliente" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Nuevo Cliente</h2>
+        <form id="formNuevoCliente">
+          <div class="form-group">
+            <label for="tipoCliente">Tipo de Cliente</label>
+            <select id="tipoCliente" name="tipoCliente" required>
+              <option value="">Seleccione</option>
+              <option value="persona">Persona</option>
+              <option value="empresa">Empresa</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="nombreCliente">Nombre / Razón Social</label>
+            <input type="text" id="nombreCliente" name="nombreCliente" required>
+          </div>
+          <div class="form-group">
+            <label for="identificacion">NIT / Cédula</label>
+            <input type="text" id="identificacion" name="identificacion" required>
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono">
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo Electrónico</label>
+            <input type="email" id="correo" name="correo">
+          </div>
+          <div class="form-group">
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" name="direccion">
+          </div>
+          <div class="form-group">
+            <label for="estadoCliente">Estado</label>
+            <select id="estadoCliente" name="estadoCliente">
+              <option value="prospecto">Prospecto</option>
+              <option value="activo">Activo</option>
+              <option value="inactivo">Inactivo</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary">Guardar Cliente</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal Detalle Cliente -->
+    <div id="modalDetalleCliente" class="modal">
+      <div class="modal-content">
+        <span id="closeDetalle" class="close">&times;</span>
+        <h2>Detalle del Cliente</h2>
+        <form id="formDetalleCliente">
+          <div class="form-group">
+            <label>Nombre / Razón Social</label>
+            <input type="text" id="detalleNombre" value="Cliente A">
+          </div>
+          <div class="form-group">
+            <label>NIT / Cédula</label>
+            <input type="text" id="detalleIdentificacion" value="123456789">
+          </div>
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" id="detalleTelefono" value="3200000000">
+          </div>
+          <div class="form-group">
+            <label>Correo</label>
+            <input type="email" id="detalleCorreo" value="cliente@correo.com">
+          </div>
+          <div class="form-group">
+            <label>Dirección</label>
+            <input type="text" id="detalleDireccion" value="Calle 123 #45-67">
+          </div>
+          <div class="form-group">
+            <label>Estado</label>
+            <select id="detalleEstado">
+              <option value="prospecto">Prospecto</option>
+              <option value="activo" selected>Activo</option>
+              <option value="inactivo">Inactivo</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary">Actualizar Cliente</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Cards resumen -->
+    <div class="cards-summary">
+      <div class="card">
+        <i class="fa-solid fa-spinner"></i>
+        <h3>12</h3>
+        <p>Pendientes</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-circle-check"></i>
+        <h3>25</h3>
+        <p>Aprobadas</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-circle-xmark"></i>
+        <h3>8</h3>
+        <p>Rechazadas</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-file"></i>
+        <h3>5</h3>
+        <p>Borradores</p>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-file-invoice-dollar"></i>
+        <h3>50</h3>
+        <p>Total Cotizaciones</p>
+      </div>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filters">
+      <input type="text" placeholder="Buscar por número o cliente">
+      <select>
+        <option value="">Estado</option>
+        <option value="pendiente">Pendiente</option>
+        <option value="aprobada">Aprobada</option>
+        <option value="rechazada">Rechazada</option>
+        <option value="borrador">Borrador</option>
+      </select>
+      <select>
+        <option value="">Cliente</option>
+        <option value="cliente-a">Cliente A</option>
+        <option value="cliente-b">Cliente B</option>
+      </select>
+      <select>
+        <option value="">Empresa</option>
+        <option value="empresa1">Empresa 1</option>
+        <option value="empresa2">Empresa 2</option>
+      </select>
+      <select>
+        <option value="">Ing. Residente</option>
+        <option value="juan">Juan Gómez</option>
+        <option value="maria">María Pérez</option>
+        <option value="laura">Laura Rodríguez</option>
+      </select>
+      <input type="date">
+      <input type="date">
+      <button class="btn-filter"><i class="fa-solid fa-filter"></i> Filtrar</button>
+    </div>
+
+    <!-- Tabla -->
+    <div class="table-container">
+      <table class="cotizaciones-table">
+        <thead>
+          <tr>
+            <th>Id Cliente</th>
+            <th>Cliente</th>
+            <th>Fecha</th>
+            <th>Valor</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CLI-001</td>
+            <td>Cliente A</td>
+            <td>2025-09-10</td>
+            <td>$5,000,000</td>
+            <td><span class="badge pending">Pendiente</span></td>
+            <td class="actions">
+              <button class="btn-view" data-id="CLI-001" title="Ver"><i class="fa-solid fa-eye"></i></button>
+              <button class="btn-edit" data-id="CLI-001" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
+              <button class="btn-delete" data-id="CLI-001" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+              <button class="btn-export" data-id="CLI-001" title="Exportar"><i class="fa-solid fa-file-export"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td>CLI-002</td>
+            <td>Cliente B</td>
+            <td>2025-09-12</td>
+            <td>$8,200,000</td>
+            <td><span class="badge success">Aprobada</span></td>
+            <td class="actions">
+              <button class="btn-view" data-id="CLI-002" title="Ver"><i class="fa-solid fa-eye"></i></button>
+              <button class="btn-edit" data-id="CLI-002" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
+              <button class="btn-delete" data-id="CLI-002" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+              <button class="btn-export" data-id="CLI-002" title="Exportar"><i class="fa-solid fa-file-export"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Paginación -->
+    <div class="pagination">
+      <button disabled>« Anterior</button>
+      <span>Página 1 de 3</span>
+      <button>Siguiente »</button>
+    </div>
+  </div>
+
+  <!-- Script para cargar el sidebar -->
+  <script>
+    fetch("sidebar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("sidebar").innerHTML = data;
+      });
+  </script>
+
+  <!-- 🚀 JS externo -->
+  <script src="assets/js/moduloclientes.js"></script>
+</body>
+</html>

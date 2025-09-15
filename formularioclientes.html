@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Detallado Cliente - Innovapro</title>
+
+  <!-- Fuente y FontAwesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/sidebar.css">
+  <link rel="stylesheet" href="assets/css/formularioclientes.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-logo">
+      <img src="../assets/img/logo.jpg" alt="Logo Innovapro" class="logo">
+    </div>
+    <a href="index.html" class="menu-item" data-tooltip="Inicio">
+      <i class="fa-solid fa-house"></i><span>Inicio</span>
+    </a>
+    <a href="moduloclientes.html" class="menu-item active" data-tooltip="Clientes">
+      <i class="fa-solid fa-users"></i><span>Clientes</span>
+    </a>
+    <!-- … resto de iconos … -->
+  </div>
+
+  <!-- Contenido -->
+  <div class="content">
+    <header class="page-header">
+      <h2><i class="fa-solid fa-user-tie"></i> Detalles del Cliente</h2>
+      <button class="btn-primary"><i class="fa-solid fa-save"></i> Guardar Cambios</button>
+    </header>
+
+    <form class="form-detallado">
+      <!-- Sección Empresa -->
+      <section>
+        <h3><i class="fa-solid fa-building"></i> Información de la Empresa</h3>
+        <div class="form-grid">
+          <div>
+            <label for="empresa">Nombre de la Empresa</label>
+            <input type="text" id="empresa" placeholder="Ej: Constructora ABC S.A.">
+          </div>
+          <div>
+            <label for="nit">NIT</label>
+            <input type="text" id="nit" placeholder="123456789-0">
+          </div>
+          <div>
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" placeholder="+57 300 000 0000">
+          </div>
+          <div>
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" placeholder="contacto@empresa.com">
+          </div>
+          <div class="full-width">
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" placeholder="Calle 123 #45-67, Bogotá">
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección Responsable -->
+      <section>
+        <h3><i class="fa-solid fa-user-gear"></i> Responsable del Proyecto</h3>
+        <div class="form-grid">
+          <div>
+            <label for="responsable">Ingeniero Residente</label>
+            <input type="text" id="responsable" placeholder="Ing. Juan Pérez">
+          </div>
+          <div>
+            <label for="cargo">Cargo</label>
+            <input type="text" id="cargo" placeholder="Residente de Obra">
+          </div>
+          <div>
+            <label for="email-responsable">Correo</label>
+            <input type="email" id="email-responsable" placeholder="juan@empresa.com">
+          </div>
+          <div>
+            <label for="telefono-responsable">Teléfono</label>
+            <input type="tel" id="telefono-responsable" placeholder="+57 310 000 0000">
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección Observaciones -->
+      <section>
+        <h3><i class="fa-solid fa-note-sticky"></i> Observaciones</h3>
+        <textarea rows="4" placeholder="Notas adicionales sobre el cliente..."></textarea>
+      </section>
+    </form>
+  </div>
+</body>
+</html>
